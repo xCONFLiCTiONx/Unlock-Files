@@ -12,9 +12,6 @@
 #pragma comment(lib, "advapi32.lib")
 #pragma comment(lib, "user32.lib")
 
-// Embed manifest to require administrative privileges
-#pragma comment(linker, "/MANIFESTUAC:\"level='requireAdministrator' uiAccess='false'\"")
-
 // NTAPI definitions not in winternl.h
 #define SystemExtendedHandleInformation 0x40
 #define ObjectNameInformation 1
