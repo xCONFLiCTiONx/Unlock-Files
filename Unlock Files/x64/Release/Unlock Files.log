@@ -1,0 +1,4 @@
+﻿  unlock_file.cpp
+LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/OPT:ICF' specification
+unlock_file.obj : warning LNK4229: invalid directive '/manifestinput:unlock_file.manifest' encountered; ignored
+  Unlock Files.vcxproj -> E:\Unlock Files\x64\Release\Unlock Files.exe

@@ -19,21 +19,21 @@ rc unlock_file.rc
 cl /EHsc unlock_file.cpp unlock_file.res
 ```
 
-This will generate `unlock_file.exe`.
+This will generate `Unlock Files.exe`.
 
 ## Usage
 
 ### Command Line
 You can run it manually from an elevated terminal:
 ```cmd
-unlock_file.exe "C:\path\to\your\locked_file.txt"
+Unlock Files.exe "C:\path\to\your\locked_file.txt"
 ```
 
 ### xToolsMenu Integration
 To add this to your right-click menu:
-1. Copy the compiled `unlock_file.exe` to a permanent folder.
+1. Copy the compiled `Unlock Files.exe` to a permanent folder.
 2. In your `xToolsMenu` configuration, add an entry for the file type (or `*` for all files).
-3. Set the command to: `"C:\path\to\unlock_file.exe" "%1"`
+3. Set the command to: `"C:\path\to\Unlock Files.exe" "%1"`
 
 ## Technical Details
 

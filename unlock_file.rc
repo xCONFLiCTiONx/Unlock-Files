@@ -1,2 +1,2 @@
 1 ICON "app_icon.ico"
-1 24 "unlock_file.manifest"
+// Manifest is now handled via project settings or #pragma, so we don't declare it here to avoid duplication errors.
