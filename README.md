@@ -1,3 +1,5 @@
+<img src="app_icon.ico" alt="Weather Watcher Logo" width="64" align="left" style="margin-right: 20px; border-radius: 10px;">
+
 # Unlock Files Utility
 
 A lightweight, standalone C++ utility designed to identify and force-close handles that are locking a file. This tool is specifically built to be integrated into context menu extensions like [xToolsMenu](https://github.com/xCONFLiCTiONx/xToolsMenu), allowing you to right-click and "Unlock" a file that the system or another process is holding onto.
