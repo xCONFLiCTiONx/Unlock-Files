@@ -556,12 +556,22 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
         LocalFree(argv);
     }
 
+    HICON hIconBig = (HICON)LoadImageW(
+        hInstance, MAKEINTRESOURCEW(1), IMAGE_ICON,
+        GetSystemMetrics(SM_CXICON), GetSystemMetrics(SM_CYICON), LR_DEFAULTCOLOR
+    );
+    HICON hIconSmall = (HICON)LoadImageW(
+        hInstance, MAKEINTRESOURCEW(1), IMAGE_ICON,
+        GetSystemMetrics(SM_CXSMICON), GetSystemMetrics(SM_CYSMICON), LR_DEFAULTCOLOR
+    );
+
     WNDCLASSEXW wc = {0};
     wc.cbSize = sizeof(WNDCLASSEXW);
     wc.style = CS_HREDRAW | CS_VREDRAW;
     wc.lpfnWndProc = WndProc;
     wc.hInstance = hInstance;
-    wc.hIcon = LoadIconW(hInstance, MAKEINTRESOURCEW(1));
+    wc.hIcon = hIconBig;
+    wc.hIconSm = hIconSmall;
     wc.hCursor = LoadCursorW(NULL, (LPCWSTR)IDC_ARROW);
     wc.hbrBackground = CreateSolidBrush(RGB(24, 24, 24));
     wc.lpszClassName = L"UnlockFileWindow";
@@ -586,6 +596,13 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
 
     if (!hwnd) {
         return 0;
+    }
+
+    if (hIconBig) {
+        SendMessageW(hwnd, WM_SETICON, ICON_BIG, (LPARAM)hIconBig);
+    }
+    if (hIconSmall) {
+        SendMessageW(hwnd, WM_SETICON, ICON_SMALL, (LPARAM)hIconSmall);
     }
 
     ShowWindow(hwnd, nCmdShow);
