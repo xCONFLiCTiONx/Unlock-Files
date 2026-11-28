@@ -81,3 +81,8 @@ compile_commands.json
 *.lastbuildstate
 *.vcxproj.FileListAbsolute.txt
 *-Setup.exe
+
+# Privacy: local configs, secrets, databases, keys, logs, installers
+settings.json
+*.db
+*.sqlite*
